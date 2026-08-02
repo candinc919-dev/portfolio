@@ -11,6 +11,10 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="images/app-icon.svg">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -49,12 +53,24 @@
           <span id="languageLabel">TR</span>
         </button>
 
+        <button class="install-app-btn" id="installAppButton" type="button" aria-label="Install portfolio app" title="Install app" hidden>
+          <i class="fa-solid fa-download"></i>
+          <span data-i18n="installApp">Install</span>
+        </button>
+
+
         <button class="menu-btn" type="button" aria-label="Open menu" aria-expanded="false">
         <i class="fa-solid fa-bars"></i>
         </button>
       </div>
     </div>
   </header>
+
+  
+  <div class="network-toast" id="networkToast" role="status" aria-live="polite" aria-atomic="true">
+    <i class="fa-solid fa-wifi"></i>
+    <span id="networkToastText">You are online.</span>
+  </div>
 
   <main>
     <section id="home" class="hero">

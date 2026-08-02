@@ -113,7 +113,10 @@ const translations = {
     shortcutLanguage: "Change language",
     shortcutHome: "Go to top",
     shortcutClose: "Close open window",
-    copied: "Copied!"
+    copied: "Copied!",
+    installApp: "Install",
+    onlineMessage: "You are online.",
+    offlineMessage: "You are offline. Cached pages remain available."
   },
   tr: {
     mainNavigation: "Ana navigasyon",
@@ -150,7 +153,10 @@ const translations = {
     shortcutLanguage: "Dili değiştir",
     shortcutHome: "Sayfanın başına git",
     shortcutClose: "Açık pencereyi kapat",
-    copied: "Kopyalandı!"
+    copied: "Kopyalandı!",
+    installApp: "Yükle",
+    onlineMessage: "Çevrimiçisin.",
+    offlineMessage: "Çevrimdışısın. Önbelleğe alınan sayfalar kullanılabilir."
   }
 };
 
@@ -261,3 +267,80 @@ document.addEventListener("keydown", (event) => {
     openShortcutPanel();
   }
 });
+
+
+/* ==================================================
+   PORTFOLIO V6 — PWA INSTALL & NETWORK STATUS
+================================================== */
+
+const installAppButton = document.querySelector("#installAppButton");
+const networkToast = document.querySelector("#networkToast");
+const networkToastText = document.querySelector("#networkToastText");
+let deferredInstallPrompt = null;
+let networkToastTimer = null;
+
+function currentDictionary() {
+  const language = document.documentElement.lang === "tr" ? "tr" : "en";
+  return translations[language] || translations.en;
+}
+
+function showNetworkToast(isOnline) {
+  if (!networkToast || !networkToastText) return;
+
+  const dictionary = currentDictionary();
+  networkToast.classList.remove("online", "offline");
+  networkToast.classList.add(isOnline ? "online" : "offline");
+
+  const icon = networkToast.querySelector("i");
+  if (icon) {
+    icon.className = isOnline
+      ? "fa-solid fa-wifi"
+      : "fa-solid fa-triangle-exclamation";
+  }
+
+  networkToastText.textContent = isOnline
+    ? dictionary.onlineMessage
+    : dictionary.offlineMessage;
+
+  networkToast.classList.add("visible");
+
+  clearTimeout(networkToastTimer);
+  networkToastTimer = setTimeout(() => {
+    networkToast.classList.remove("visible");
+  }, isOnline ? 2600 : 5000);
+}
+
+window.addEventListener("online", () => showNetworkToast(true));
+window.addEventListener("offline", () => showNetworkToast(false));
+
+window.addEventListener("beforeinstallprompt", (event) => {
+  event.preventDefault();
+  deferredInstallPrompt = event;
+
+  if (installAppButton) {
+    installAppButton.hidden = false;
+  }
+});
+
+installAppButton?.addEventListener("click", async () => {
+  if (!deferredInstallPrompt) return;
+
+  deferredInstallPrompt.prompt();
+  await deferredInstallPrompt.userChoice;
+
+  deferredInstallPrompt = null;
+  installAppButton.hidden = true;
+});
+
+window.addEventListener("appinstalled", () => {
+  deferredInstallPrompt = null;
+  if (installAppButton) installAppButton.hidden = true;
+});
+
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", () => {
+    navigator.serviceWorker.register("./service-worker.js").catch((error) => {
+      console.error("Service worker registration failed:", error);
+    });
+  });
+}
