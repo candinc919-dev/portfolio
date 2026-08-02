@@ -28,20 +28,25 @@
   <header>
     <div class="container">
       <a href="#home" class="logo">Can Ali Rıza Dinç</a>
-      <nav aria-label="Main navigation">
+      <nav aria-label="Main navigation" data-i18n-aria="mainNavigation">
         <ul>
-          <li><a href="#home">Home</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#skills">Skills</a></li>
-          <li><a href="#services">Services</a></li>
-          <li><a href="#process">Process</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#contact">Contact</a></li>
+          <li><a href="#home" data-i18n="navHome">Home</a></li>
+          <li><a href="#about" data-i18n="navAbout">About</a></li>
+          <li><a href="#skills" data-i18n="navSkills">Skills</a></li>
+          <li><a href="#services" data-i18n="navServices">Services</a></li>
+          <li><a href="#process" data-i18n="navProcess">Process</a></li>
+          <li><a href="#projects" data-i18n="navProjects">Projects</a></li>
+          <li><a href="#contact" data-i18n="navContact">Contact</a></li>
         </ul>
       </nav>
       <div class="header-actions">
         <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch to light theme" title="Change theme">
           <i class="fa-solid fa-moon"></i>
+        </button>
+
+        <button class="language-toggle" id="languageToggle" type="button" aria-label="Türkçeye geç" title="Change language">
+          <i class="fa-solid fa-language"></i>
+          <span id="languageLabel">TR</span>
         </button>
 
         <button class="menu-btn" type="button" aria-label="Open menu" aria-expanded="false">
@@ -55,16 +60,16 @@
     <section id="home" class="hero">
       <div class="container hero-container">
         <div class="hero-left">
-          <div class="availability"><span></span> Available for freelance projects</div>
-          <p class="welcome">Hello, I'm</p>
+          <div class="availability"><span></span><span data-i18n="availability">Available for freelance projects</span></div>
+          <p class="welcome" data-i18n="welcome">Hello, I'm</p>
           <h1>Can Ali Rıza Dinç</h1>
           <h2><span class="typing"></span></h2>
           <p class="hero-text">
-            I create fast, responsive and user-friendly websites using HTML, CSS and JavaScript.
+            <span data-i18n="heroText">I create fast, responsive and user-friendly websites using HTML, CSS and JavaScript.</span>
           </p>
           <div class="hero-buttons">
-            <a href="#projects" class="primary-btn">View Projects</a>
-            <a href="#contact" class="secondary-btn">Contact Me</a>
+            <a href="#projects" class="primary-btn" data-i18n="viewProjects">View Projects</a>
+            <a href="#contact" class="secondary-btn" data-i18n="contactMe">Contact Me</a>
           </div>
           <div class="socials">
             <a href="https://github.com/candinc919-dev" target="_blank" rel="noopener" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
@@ -88,7 +93,7 @@
 
     <section id="about" class="about">
       <div class="container">
-        <div class="section-title"><p>WHO I AM</p><h2>About Me</h2></div>
+        <div class="section-title"><p data-i18n="aboutEyebrow">WHO I AM</p><h2 data-i18n="aboutTitle">About Me</h2></div>
         <div class="about-grid">
           <div class="about-image">
             <div class="image-card">
@@ -118,7 +123,7 @@
 
     <section id="skills" class="skills">
       <div class="container">
-        <div class="section-title"><p>WHAT I DO</p><h2>My Skills</h2></div>
+        <div class="section-title"><p data-i18n="skillsEyebrow">WHAT I DO</p><h2 data-i18n="skillsTitle">My Skills</h2></div>
         <div class="skills-grid">
           <article class="skill-card"><i class="fa-brands fa-html5"></i><h3>HTML5</h3><p>Semantic and accessible markup.</p></article>
           <article class="skill-card"><i class="fa-brands fa-css3-alt"></i><h3>CSS3</h3><p>Responsive layouts, Grid, Flexbox and animations.</p></article>
@@ -133,7 +138,7 @@
 
     <section id="services" class="services">
       <div class="container">
-        <div class="section-title"><p>HOW I CAN HELP</p><h2>Services</h2></div>
+        <div class="section-title"><p data-i18n="servicesEyebrow">HOW I CAN HELP</p><h2 data-i18n="servicesTitle">Services</h2></div>
         <div class="services-grid">
           <article class="service-card">
             <span class="service-number">01</span>
@@ -160,7 +165,7 @@
 
     <section id="process" class="process">
       <div class="container">
-        <div class="section-title"><p>HOW I WORK</p><h2>My Development Process</h2></div>
+        <div class="section-title"><p data-i18n="processEyebrow">HOW I WORK</p><h2 data-i18n="processTitle">My Development Process</h2></div>
         <div class="process-grid">
           <article class="process-card"><span>01</span><i class="fa-regular fa-comments"></i><h3>Understand</h3><p>I clarify the goal, audience and required features before writing code.</p></article>
           <article class="process-card"><span>02</span><i class="fa-solid fa-pen-ruler"></i><h3>Plan</h3><p>I structure the layout, content hierarchy and responsive behavior.</p></article>
@@ -172,7 +177,7 @@
 
     <section id="projects" class="projects">
       <div class="container">
-        <div class="section-title"><p>MY WORK</p><h2>Featured Projects</h2></div>
+        <div class="section-title"><p data-i18n="projectsEyebrow">MY WORK</p><h2 data-i18n="projectsTitle">Featured Projects</h2></div>
         <div class="project-filters" role="group" aria-label="Filter projects">
           <button class="filter-btn active" type="button" data-filter="all">All</button>
           <button class="filter-btn" type="button" data-filter="portfolio">Portfolio</button>
@@ -224,12 +229,12 @@
 
     <section id="contact" class="contact">
       <div class="container">
-        <div class="section-title"><p>CONTACT</p><h2>Let's Work Together</h2></div>
+        <div class="section-title"><p data-i18n="contactEyebrow">CONTACT</p><h2 data-i18n="contactTitle">Let's Work Together</h2></div>
         <div class="contact-grid">
           <div class="contact-info">
-            <h3>Have a project in mind?</h3>
-            <p>I'm open to freelance opportunities and front-end projects.</p>
-            <div class="contact-item"><i class="fa-solid fa-envelope"></i><a href="mailto:mail@example.com">mail@example.com</a></div>
+            <h3 data-i18n="contactHeading">Have a project in mind?</h3>
+            <p data-i18n="contactText">I'm open to freelance opportunities and front-end projects.</p>
+            <div class="contact-item"><i class="fa-solid fa-envelope"></i><a href="mailto:mail@example.com">mail@example.com</a><button class="copy-email-btn" id="copyEmailButton" type="button" aria-label="Copy email address" title="Copy email"><i class="fa-regular fa-copy"></i></button></div>
             <div class="contact-item"><i class="fa-brands fa-github"></i><a href="https://github.com/candinc919-dev" target="_blank" rel="noopener">github.com/candinc919-dev</a></div>
           </div>
 
@@ -244,6 +249,25 @@
       </div>
     </section>
   </main>
+
+  <button class="shortcut-help" id="shortcutHelp" type="button" aria-label="Show keyboard shortcuts" title="Keyboard shortcuts">
+    <i class="fa-regular fa-keyboard"></i>
+  </button>
+
+  <div class="shortcut-panel" id="shortcutPanel" role="dialog" aria-modal="true" aria-labelledby="shortcutTitle" aria-hidden="true">
+    <button class="shortcut-backdrop" type="button" data-close-shortcuts aria-label="Close keyboard shortcuts"></button>
+    <div class="shortcut-card">
+      <button class="shortcut-close" type="button" data-close-shortcuts aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
+      <p class="shortcut-eyebrow" data-i18n="shortcutsEyebrow">NAVIGATION</p>
+      <h2 id="shortcutTitle" data-i18n="shortcutsTitle">Keyboard Shortcuts</h2>
+      <div class="shortcut-list">
+        <div><kbd>T</kbd><span data-i18n="shortcutTheme">Change theme</span></div>
+        <div><kbd>L</kbd><span data-i18n="shortcutLanguage">Change language</span></div>
+        <div><kbd>H</kbd><span data-i18n="shortcutHome">Go to top</span></div>
+        <div><kbd>Esc</kbd><span data-i18n="shortcutClose">Close open window</span></div>
+      </div>
+    </div>
+  </div>
 
   <footer><div class="container footer-content"><p>© 2026 Can Ali Rıza Dinç</p><div class="footer-socials"><a href="https://github.com/candinc919-dev" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i></a><a href="#"><i class="fa-brands fa-linkedin"></i></a><a href="mailto:mail@example.com"><i class="fa-solid fa-envelope"></i></a></div><p>Designed & Developed with ❤️</p></div></footer>
   <button class="back-to-top" id="backToTop" type="button" aria-label="Back to top">

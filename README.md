@@ -44,3 +44,12 @@ Replace every `mail@example.com` occurrence before publishing.
 - Project category filters
 - Accessible project details modal
 - Keyboard Escape support and focus restoration
+
+
+## V5 Features
+
+- English/Turkish language switcher with saved preference
+- Copy-email button
+- Keyboard shortcut panel
+- Shortcuts: T theme, L language, H home, Esc close
+- Improved accessibility labels

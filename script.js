@@ -66,3 +66,198 @@ contactForm?.addEventListener("submit", (event) => {
   showFormMessage("Your email application is opening.", "success");
 }, true);
 \n\n/* ==================================================\n   PORTFOLIO V4 — PROJECT FILTERING & MODAL\n================================================== */\n\nconst filterButtons = document.querySelectorAll('.filter-btn');\nconst projectCards = document.querySelectorAll('.project-card');\nconst projectModal = document.querySelector('#projectModal');\nconst modalTitle = document.querySelector('#modalTitle');\nconst modalDescription = document.querySelector('#modalDescription');\nconst modalImage = document.querySelector('#modalImage');\nconst modalLive = document.querySelector('#modalLive');\nconst modalGithub = document.querySelector('#modalGithub');\nlet lastFocusedElement = null;\n\nfilterButtons.forEach(button => {\n  button.addEventListener('click', () => {\n    const filter = button.dataset.filter;\n    filterButtons.forEach(item => item.classList.remove('active'));\n    button.classList.add('active');\n\n    projectCards.forEach(card => {\n      const show = filter === 'all' || card.dataset.category === filter;\n      card.classList.toggle('project-hidden', !show);\n    });\n  });\n});\n\nfunction openProjectModal(card) {\n  lastFocusedElement = document.activeElement;\n  const links = card.querySelectorAll('.project-buttons a');\n\n  modalTitle.textContent = card.dataset.title || card.querySelector('h3')?.textContent || 'Project';\n  modalDescription.textContent = card.dataset.description || card.querySelector('.project-content p')?.textContent || '';\n  modalImage.src = card.dataset.image || card.querySelector('img')?.src || '';\n  modalImage.alt = `${modalTitle.textContent} preview`;\n  modalLive.href = links[0]?.href || '#';\n  modalGithub.href = links[1]?.href || '#';\n\n  projectModal.classList.add('open');\n  projectModal.setAttribute('aria-hidden', 'false');\n  document.body.classList.add('modal-open');\n  projectModal.querySelector('.modal-close')?.focus();\n}\n\nfunction closeProjectModal() {\n  projectModal.classList.remove('open');\n  projectModal.setAttribute('aria-hidden', 'true');\n  document.body.classList.remove('modal-open');\n  lastFocusedElement?.focus();\n}\n\ndocument.querySelectorAll('.project-details-btn').forEach(button => {\n  button.addEventListener('click', () => openProjectModal(button.closest('.project-card')));\n});\n\nprojectModal?.querySelectorAll('[data-close-modal]').forEach(element => {\n  element.addEventListener('click', closeProjectModal);\n});\n\ndocument.addEventListener('keydown', event => {\n  if (event.key === 'Escape' && projectModal?.classList.contains('open')) {\n    closeProjectModal();\n  }\n});\n
+
+/* ==================================================
+   PORTFOLIO V5 — BILINGUAL UI, COPY EMAIL & SHORTCUTS
+================================================== */
+
+const languageToggle = document.querySelector("#languageToggle");
+const languageLabel = document.querySelector("#languageLabel");
+const copyEmailButton = document.querySelector("#copyEmailButton");
+const shortcutHelp = document.querySelector("#shortcutHelp");
+const shortcutPanel = document.querySelector("#shortcutPanel");
+
+const translations = {
+  en: {
+    mainNavigation: "Main navigation",
+    navHome: "Home",
+    navAbout: "About",
+    navSkills: "Skills",
+    navServices: "Services",
+    navProcess: "Process",
+    navProjects: "Projects",
+    navContact: "Contact",
+    availability: "Available for freelance projects",
+    welcome: "Hello, I'm",
+    heroText: "I create fast, responsive and user-friendly websites using HTML, CSS and JavaScript.",
+    viewProjects: "View Projects",
+    contactMe: "Contact Me",
+    aboutEyebrow: "WHO I AM",
+    aboutTitle: "About Me",
+    skillsEyebrow: "WHAT I DO",
+    skillsTitle: "My Skills",
+    servicesEyebrow: "HOW I CAN HELP",
+    servicesTitle: "Services",
+    processEyebrow: "HOW I WORK",
+    processTitle: "My Development Process",
+    projectsEyebrow: "MY WORK",
+    projectsTitle: "Featured Projects",
+    contactEyebrow: "CONTACT",
+    contactTitle: "Let's Work Together",
+    contactHeading: "Have a project in mind?",
+    contactText: "I'm open to freelance opportunities and front-end projects.",
+    sendMessage: "Send Message",
+    shortcutsEyebrow: "NAVIGATION",
+    shortcutsTitle: "Keyboard Shortcuts",
+    shortcutTheme: "Change theme",
+    shortcutLanguage: "Change language",
+    shortcutHome: "Go to top",
+    shortcutClose: "Close open window",
+    copied: "Copied!"
+  },
+  tr: {
+    mainNavigation: "Ana navigasyon",
+    navHome: "Ana Sayfa",
+    navAbout: "Hakkımda",
+    navSkills: "Yetenekler",
+    navServices: "Hizmetler",
+    navProcess: "Süreç",
+    navProjects: "Projeler",
+    navContact: "İletişim",
+    availability: "Freelance projeler için müsaitim",
+    welcome: "Merhaba, ben",
+    heroText: "HTML, CSS ve JavaScript kullanarak hızlı, responsive ve kullanıcı dostu web siteleri geliştiriyorum.",
+    viewProjects: "Projeleri Gör",
+    contactMe: "İletişime Geç",
+    aboutEyebrow: "BEN KİMİM",
+    aboutTitle: "Hakkımda",
+    skillsEyebrow: "NELER YAPIYORUM",
+    skillsTitle: "Yeteneklerim",
+    servicesEyebrow: "NASIL YARDIMCI OLABİLİRİM",
+    servicesTitle: "Hizmetler",
+    processEyebrow: "NASIL ÇALIŞIYORUM",
+    processTitle: "Geliştirme Sürecim",
+    projectsEyebrow: "ÇALIŞMALARIM",
+    projectsTitle: "Öne Çıkan Projeler",
+    contactEyebrow: "İLETİŞİM",
+    contactTitle: "Birlikte Çalışalım",
+    contactHeading: "Aklında bir proje mi var?",
+    contactText: "Freelance fırsatlara ve front-end projelerine açığım.",
+    sendMessage: "Mesaj Gönder",
+    shortcutsEyebrow: "NAVİGASYON",
+    shortcutsTitle: "Klavye Kısayolları",
+    shortcutTheme: "Temayı değiştir",
+    shortcutLanguage: "Dili değiştir",
+    shortcutHome: "Sayfanın başına git",
+    shortcutClose: "Açık pencereyi kapat",
+    copied: "Kopyalandı!"
+  }
+};
+
+function applyLanguage(language) {
+  const dictionary = translations[language] || translations.en;
+  document.documentElement.lang = language;
+
+  document.querySelectorAll("[data-i18n]").forEach((element) => {
+    const key = element.dataset.i18n;
+    if (dictionary[key]) element.textContent = dictionary[key];
+  });
+
+  document.querySelectorAll("[data-i18n-aria]").forEach((element) => {
+    const key = element.dataset.i18nAria;
+    if (dictionary[key]) element.setAttribute("aria-label", dictionary[key]);
+  });
+
+  if (languageLabel) {
+    languageLabel.textContent = language === "en" ? "TR" : "EN";
+  }
+
+  languageToggle?.setAttribute(
+    "aria-label",
+    language === "en" ? "Türkçeye geç" : "Switch to English"
+  );
+
+  localStorage.setItem("portfolio-language", language);
+}
+
+const savedLanguage = localStorage.getItem("portfolio-language") || "en";
+applyLanguage(savedLanguage);
+
+languageToggle?.addEventListener("click", () => {
+  const nextLanguage = document.documentElement.lang === "en" ? "tr" : "en";
+  applyLanguage(nextLanguage);
+});
+
+copyEmailButton?.addEventListener("click", async () => {
+  const email = document.querySelector('a[href^="mailto:"]')?.textContent.trim();
+  if (!email) return;
+
+  try {
+    await navigator.clipboard.writeText(email);
+  } catch {
+    const input = document.createElement("textarea");
+    input.value = email;
+    document.body.appendChild(input);
+    input.select();
+    document.execCommand("copy");
+    input.remove();
+  }
+
+  const icon = copyEmailButton.querySelector("i");
+  icon?.classList.remove("fa-copy");
+  icon?.classList.add("fa-check");
+  copyEmailButton.classList.add("copied");
+
+  const currentLanguage = document.documentElement.lang === "tr" ? "tr" : "en";
+  copyEmailButton.setAttribute("title", translations[currentLanguage].copied);
+
+  setTimeout(() => {
+    icon?.classList.remove("fa-check");
+    icon?.classList.add("fa-copy");
+    copyEmailButton.classList.remove("copied");
+  }, 1800);
+});
+
+function openShortcutPanel() {
+  shortcutPanel?.classList.add("open");
+  shortcutPanel?.setAttribute("aria-hidden", "false");
+  shortcutPanel?.querySelector(".shortcut-close")?.focus();
+}
+
+function closeShortcutPanel() {
+  shortcutPanel?.classList.remove("open");
+  shortcutPanel?.setAttribute("aria-hidden", "true");
+  shortcutHelp?.focus();
+}
+
+shortcutHelp?.addEventListener("click", openShortcutPanel);
+
+shortcutPanel?.querySelectorAll("[data-close-shortcuts]").forEach((element) => {
+  element.addEventListener("click", closeShortcutPanel);
+});
+
+document.addEventListener("keydown", (event) => {
+  const tagName = document.activeElement?.tagName;
+  const typingInField = ["INPUT", "TEXTAREA", "SELECT"].includes(tagName);
+  if (typingInField) return;
+
+  if (event.key.toLowerCase() === "t") {
+    themeToggle?.click();
+  }
+
+  if (event.key.toLowerCase() === "l") {
+    languageToggle?.click();
+  }
+
+  if (event.key.toLowerCase() === "h") {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }
+
+  if (event.key === "Escape" && shortcutPanel?.classList.contains("open")) {
+    closeShortcutPanel();
+  }
+
+  if (event.key === "?") {
+    openShortcutPanel();
+  }
+});
