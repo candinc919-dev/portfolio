@@ -34,6 +34,7 @@
           <li><a href="#about">About</a></li>
           <li><a href="#skills">Skills</a></li>
           <li><a href="#services">Services</a></li>
+          <li><a href="#process">Process</a></li>
           <li><a href="#projects">Projects</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
@@ -156,11 +157,30 @@
       </div>
     </section>
 
+
+    <section id="process" class="process">
+      <div class="container">
+        <div class="section-title"><p>HOW I WORK</p><h2>My Development Process</h2></div>
+        <div class="process-grid">
+          <article class="process-card"><span>01</span><i class="fa-regular fa-comments"></i><h3>Understand</h3><p>I clarify the goal, audience and required features before writing code.</p></article>
+          <article class="process-card"><span>02</span><i class="fa-solid fa-pen-ruler"></i><h3>Plan</h3><p>I structure the layout, content hierarchy and responsive behavior.</p></article>
+          <article class="process-card"><span>03</span><i class="fa-solid fa-code"></i><h3>Build</h3><p>I develop the interface with semantic HTML, modern CSS and JavaScript.</p></article>
+          <article class="process-card"><span>04</span><i class="fa-solid fa-check-double"></i><h3>Test</h3><p>I check mobile responsiveness, interactions, accessibility and performance.</p></article>
+        </div>
+      </div>
+    </section>
+
     <section id="projects" class="projects">
       <div class="container">
         <div class="section-title"><p>MY WORK</p><h2>Featured Projects</h2></div>
+        <div class="project-filters" role="group" aria-label="Filter projects">
+          <button class="filter-btn active" type="button" data-filter="all">All</button>
+          <button class="filter-btn" type="button" data-filter="portfolio">Portfolio</button>
+          <button class="filter-btn" type="button" data-filter="landing">Landing Page</button>
+          <button class="filter-btn" type="button" data-filter="blog">Blog</button>
+        </div>
         <div class="projects-grid">
-          <article class="project-card">
+          <article class="project-card" data-category="portfolio" data-title="Personal Portfolio" data-description="A responsive personal portfolio with animated sections, theme switching and accessible navigation." data-image="images/project1.svg">
             <img src="images/project1.svg" alt="Personal portfolio preview">
             <div class="project-content">
               <h3>Personal Portfolio</h3>
@@ -171,9 +191,11 @@
                 <a class="secondary-btn" href="https://github.com/candinc919-dev/portfolio" target="_blank" rel="noopener">GitHub</a>
               </div>
             </div>
+              <button class="project-details-btn" type="button">Project Details</button>
+            </div>
           </article>
 
-          <article class="project-card">
+          <article class="project-card" data-category="landing" data-title="Modern Landing Page" data-description="A conversion-focused landing page with polished motion, clear hierarchy and responsive layout." data-image="images/project2.svg">
             <img src="images/project2.svg" alt="Landing page preview">
             <div class="project-content">
               <h3>Modern Landing Page</h3>
@@ -181,15 +203,19 @@
               <div class="project-tech"><span>HTML</span><span>CSS</span><span>JavaScript</span></div>
               <div class="project-buttons"><a class="primary-btn" href="#">Live Demo</a><a class="secondary-btn" href="#">GitHub</a></div>
             </div>
+              <button class="project-details-btn" type="button">Project Details</button>
+            </div>
           </article>
 
-          <article class="project-card">
+          <article class="project-card" data-category="blog" data-title="Responsive Blog" data-description="A clean reading experience designed around typography, usability and performance." data-image="images/project3.svg">
             <img src="images/project3.svg" alt="Responsive blog preview">
             <div class="project-content">
               <h3>Responsive Blog</h3>
               <p>Clean blog interface focused on readability and performance.</p>
               <div class="project-tech"><span>HTML</span><span>CSS</span><span>JavaScript</span></div>
               <div class="project-buttons"><a class="primary-btn" href="#">Live Demo</a><a class="secondary-btn" href="#">GitHub</a></div>
+            </div>
+              <button class="project-details-btn" type="button">Project Details</button>
             </div>
           </article>
         </div>
@@ -223,6 +249,24 @@
   <button class="back-to-top" id="backToTop" type="button" aria-label="Back to top">
     <i class="fa-solid fa-arrow-up"></i>
   </button>
+
+
+  <div class="project-modal" id="projectModal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="project-modal-backdrop" data-close-modal></div>
+    <div class="project-modal-panel" role="document">
+      <button class="modal-close" type="button" aria-label="Close project details" data-close-modal><i class="fa-solid fa-xmark"></i></button>
+      <img id="modalImage" src="" alt="">
+      <div class="project-modal-content">
+        <p class="modal-eyebrow">PROJECT DETAILS</p>
+        <h2 id="modalTitle"></h2>
+        <p id="modalDescription"></p>
+        <div class="modal-actions">
+          <a id="modalLive" class="primary-btn" href="#" target="_blank" rel="noopener">Live Demo</a>
+          <a id="modalGithub" class="secondary-btn" href="#" target="_blank" rel="noopener">GitHub</a>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <script src="script.js"></script>
 </body>

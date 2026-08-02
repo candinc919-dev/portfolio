@@ -37,3 +37,10 @@ The contact form currently validates input but does not send email.
 - Email-client contact workflow
 
 Replace every `mail@example.com` occurrence before publishing.
+
+
+## V4 Features
+- Four-step development process section
+- Project category filters
+- Accessible project details modal
+- Keyboard Escape support and focus restoration
