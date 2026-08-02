@@ -14,6 +14,11 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <div class="page-loader" id="pageLoader"><div class="loader-inner"><span class="loader-logo">Can Ali Rıza Dinç</span><span class="loader-line"><span></span></span><span class="loader-text">Loading portfolio...</span></div></div>
+  <div class="scroll-progress" id="scrollProgress"></div>
+  <div class="mouse-glow" id="mouseGlow"></div>
+  <div class="custom-cursor cursor-dot" id="cursorDot"></div>
+  <div class="custom-cursor cursor-ring" id="cursorRing"></div>
   <div class="background" aria-hidden="true">
     <div class="gradient gradient1"></div>
     <div class="gradient gradient2"></div>
@@ -95,8 +100,8 @@
 
     <section class="stats">
       <div class="container stats-grid">
-        <article class="stat-card"><h2>3+</h2><p>Projects</p></article>
-        <article class="stat-card"><h2>100%</h2><p>Responsive</p></article>
+        <article class="stat-card"><h2 class="counter" data-target="3" data-suffix="+">0</h2><p>Projects</p></article>
+        <article class="stat-card"><h2 class="counter" data-target="100" data-suffix="%">0</h2><p>Responsive</p></article>
         <article class="stat-card"><h2>HTML</h2><p>Semantic Code</p></article>
         <article class="stat-card"><h2>CSS</h2><p>Modern Layouts</p></article>
       </div>
@@ -178,7 +183,7 @@
     </section>
   </main>
 
-  <footer><div class="container"><p>© 2026 Can Ali Rıza Dinç</p><p>Designed & Developed with ❤️</p></div></footer>
+  <footer><div class="container footer-content"><p>© 2026 Can Ali Rıza Dinç</p><div class="footer-socials"><a href="https://github.com/candinc919-dev" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i></a><a href="#"><i class="fa-brands fa-linkedin"></i></a><a href="mailto:mail@example.com"><i class="fa-solid fa-envelope"></i></a></div><p>Designed & Developed with ❤️</p></div></footer>
   <script src="script.js"></script>
 </body>
 </html>
