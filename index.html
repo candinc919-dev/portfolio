@@ -33,13 +33,20 @@
           <li><a href="#home">Home</a></li>
           <li><a href="#about">About</a></li>
           <li><a href="#skills">Skills</a></li>
+          <li><a href="#services">Services</a></li>
           <li><a href="#projects">Projects</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
       </nav>
-      <button class="menu-btn" type="button" aria-label="Open menu" aria-expanded="false">
+      <div class="header-actions">
+        <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch to light theme" title="Change theme">
+          <i class="fa-solid fa-moon"></i>
+        </button>
+
+        <button class="menu-btn" type="button" aria-label="Open menu" aria-expanded="false">
         <i class="fa-solid fa-bars"></i>
-      </button>
+        </button>
+      </div>
     </div>
   </header>
 
@@ -47,6 +54,7 @@
     <section id="home" class="hero">
       <div class="container hero-container">
         <div class="hero-left">
+          <div class="availability"><span></span> Available for freelance projects</div>
           <p class="welcome">Hello, I'm</p>
           <h1>Can Ali Rıza Dinç</h1>
           <h2><span class="typing"></span></h2>
@@ -121,6 +129,33 @@
       </div>
     </section>
 
+
+    <section id="services" class="services">
+      <div class="container">
+        <div class="section-title"><p>HOW I CAN HELP</p><h2>Services</h2></div>
+        <div class="services-grid">
+          <article class="service-card">
+            <span class="service-number">01</span>
+            <i class="fa-solid fa-laptop-code"></i>
+            <h3>Landing Pages</h3>
+            <p>Fast, polished and conversion-focused landing pages for products, services and campaigns.</p>
+          </article>
+          <article class="service-card">
+            <span class="service-number">02</span>
+            <i class="fa-solid fa-mobile-screen-button"></i>
+            <h3>Responsive Websites</h3>
+            <p>Layouts that adapt smoothly to mobile, tablet and desktop screens without sacrificing usability.</p>
+          </article>
+          <article class="service-card">
+            <span class="service-number">03</span>
+            <i class="fa-solid fa-wand-magic-sparkles"></i>
+            <h3>UI Implementation</h3>
+            <p>Turning visual designs into clean, accessible and maintainable HTML, CSS and JavaScript.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
     <section id="projects" class="projects">
       <div class="container">
         <div class="section-title"><p>MY WORK</p><h2>Featured Projects</h2></div>
@@ -176,7 +211,8 @@
             <input id="name" type="text" placeholder="Your Name" required>
             <input id="email" type="email" placeholder="Your Email" required>
             <textarea id="message" rows="6" placeholder="Message" required></textarea>
-            <button class="primary-btn" type="submit">Send Message</button>
+            <button class="primary-btn" type="submit"><i class="fa-regular fa-paper-plane"></i> Send Message</button>
+            <p class="form-helper">This button opens your email application with the message prepared.</p>
           </form>
         </div>
       </div>
@@ -184,6 +220,10 @@
   </main>
 
   <footer><div class="container footer-content"><p>© 2026 Can Ali Rıza Dinç</p><div class="footer-socials"><a href="https://github.com/candinc919-dev" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i></a><a href="#"><i class="fa-brands fa-linkedin"></i></a><a href="mailto:mail@example.com"><i class="fa-solid fa-envelope"></i></a></div><p>Designed & Developed with ❤️</p></div></footer>
+  <button class="back-to-top" id="backToTop" type="button" aria-label="Back to top">
+    <i class="fa-solid fa-arrow-up"></i>
+  </button>
+
   <script src="script.js"></script>
 </body>
 </html>

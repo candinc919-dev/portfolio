@@ -26,3 +26,14 @@ The contact form currently validates input but does not send email.
 - Animated counters
 - 3D project card tilt
 - Enhanced footer
+
+
+## V3 additions
+
+- Dark/light theme with saved preference
+- Services section
+- Back-to-top button
+- Freelance availability badge
+- Email-client contact workflow
+
+Replace every `mail@example.com` occurrence before publishing.
