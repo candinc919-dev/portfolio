@@ -44,3 +44,25 @@ Replace every `mail@example.com` occurrence before publishing.
 - Project category filters
 - Accessible project details modal
 - Keyboard Escape support and focus restoration
+
+
+## V5 Features
+
+- English/Turkish language switcher with saved preference
+- Copy-email button
+- Keyboard shortcut panel
+- Shortcuts: T theme, L language, H home, Esc close
+- Improved accessibility labels
+
+
+## V6 PWA Features
+
+- Installable portfolio app
+- Web app manifest
+- Service worker
+- Offline fallback page
+- Cached core files
+- Online/offline status notifications
+- Custom app icon and favicon
+
+GitHub Pages must be served over HTTPS for the service worker and install feature to work.
