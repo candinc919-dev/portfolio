@@ -65,7 +65,73 @@ contactForm?.addEventListener("submit", (event) => {
 
   showFormMessage("Your email application is opening.", "success");
 }, true);
-\n\n/* ==================================================\n   PORTFOLIO V4 — PROJECT FILTERING & MODAL\n================================================== */\n\nconst filterButtons = document.querySelectorAll('.filter-btn');\nconst projectCards = document.querySelectorAll('.project-card');\nconst projectModal = document.querySelector('#projectModal');\nconst modalTitle = document.querySelector('#modalTitle');\nconst modalDescription = document.querySelector('#modalDescription');\nconst modalImage = document.querySelector('#modalImage');\nconst modalLive = document.querySelector('#modalLive');\nconst modalGithub = document.querySelector('#modalGithub');\nlet lastFocusedElement = null;\n\nfilterButtons.forEach(button => {\n  button.addEventListener('click', () => {\n    const filter = button.dataset.filter;\n    filterButtons.forEach(item => item.classList.remove('active'));\n    button.classList.add('active');\n\n    projectCards.forEach(card => {\n      const show = filter === 'all' || card.dataset.category === filter;\n      card.classList.toggle('project-hidden', !show);\n    });\n  });\n});\n\nfunction openProjectModal(card) {\n  lastFocusedElement = document.activeElement;\n  const links = card.querySelectorAll('.project-buttons a');\n\n  modalTitle.textContent = card.dataset.title || card.querySelector('h3')?.textContent || 'Project';\n  modalDescription.textContent = card.dataset.description || card.querySelector('.project-content p')?.textContent || '';\n  modalImage.src = card.dataset.image || card.querySelector('img')?.src || '';\n  modalImage.alt = `${modalTitle.textContent} preview`;\n  modalLive.href = links[0]?.href || '#';\n  modalGithub.href = links[1]?.href || '#';\n\n  projectModal.classList.add('open');\n  projectModal.setAttribute('aria-hidden', 'false');\n  document.body.classList.add('modal-open');\n  projectModal.querySelector('.modal-close')?.focus();\n}\n\nfunction closeProjectModal() {\n  projectModal.classList.remove('open');\n  projectModal.setAttribute('aria-hidden', 'true');\n  document.body.classList.remove('modal-open');\n  lastFocusedElement?.focus();\n}\n\ndocument.querySelectorAll('.project-details-btn').forEach(button => {\n  button.addEventListener('click', () => openProjectModal(button.closest('.project-card')));\n});\n\nprojectModal?.querySelectorAll('[data-close-modal]').forEach(element => {\n  element.addEventListener('click', closeProjectModal);\n});\n\ndocument.addEventListener('keydown', event => {\n  if (event.key === 'Escape' && projectModal?.classList.contains('open')) {\n    closeProjectModal();\n  }\n});\n
+
+
+/* ==================================================
+   PORTFOLIO V4 — PROJECT FILTERING & MODAL
+================================================== */
+
+const filterButtons = document.querySelectorAll('.filter-btn');
+const projectCards = document.querySelectorAll('.project-card');
+const projectModal = document.querySelector('#projectModal');
+const modalTitle = document.querySelector('#modalTitle');
+const modalDescription = document.querySelector('#modalDescription');
+const modalImage = document.querySelector('#modalImage');
+const modalLive = document.querySelector('#modalLive');
+const modalGithub = document.querySelector('#modalGithub');
+let lastFocusedElement = null;
+
+filterButtons.forEach(button => {
+  button.addEventListener('click', () => {
+    const filter = button.dataset.filter;
+    filterButtons.forEach(item => item.classList.remove('active'));
+    button.classList.add('active');
+
+    projectCards.forEach(card => {
+      const show = filter === 'all' || card.dataset.category === filter;
+      card.classList.toggle('project-hidden', !show);
+    });
+  });
+});
+
+function openProjectModal(card) {
+  lastFocusedElement = document.activeElement;
+  const links = card.querySelectorAll('.project-buttons a');
+
+  modalTitle.textContent = card.dataset.title || card.querySelector('h3')?.textContent || 'Project';
+  modalDescription.textContent = card.dataset.description || card.querySelector('.project-content p')?.textContent || '';
+  modalImage.src = card.dataset.image || card.querySelector('img')?.src || '';
+  modalImage.alt = `${modalTitle.textContent} preview`;
+  modalLive.href = links[0]?.href || '#';
+  modalGithub.href = links[1]?.href || '#';
+
+  projectModal.classList.add('open');
+  projectModal.setAttribute('aria-hidden', 'false');
+  document.body.classList.add('modal-open');
+  projectModal.querySelector('.modal-close')?.focus();
+}
+
+function closeProjectModal() {
+  projectModal.classList.remove('open');
+  projectModal.setAttribute('aria-hidden', 'true');
+  document.body.classList.remove('modal-open');
+  lastFocusedElement?.focus();
+}
+
+document.querySelectorAll('.project-details-btn').forEach(button => {
+  button.addEventListener('click', () => openProjectModal(button.closest('.project-card')));
+});
+
+projectModal?.querySelectorAll('[data-close-modal]').forEach(element => {
+  element.addEventListener('click', closeProjectModal);
+});
+
+document.addEventListener('keydown', event => {
+  if (event.key === 'Escape' && projectModal?.classList.contains('open')) {
+    closeProjectModal();
+  }
+});
+
 
 /* ==================================================
    PORTFOLIO V5 — BILINGUAL UI, COPY EMAIL & SHORTCUTS
