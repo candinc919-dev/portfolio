@@ -201,6 +201,15 @@ const translations = {
     processTitle: "My Development Process",
     projectsEyebrow: "MY WORK",
     projectsTitle: "Featured Projects",
+    aboutHeading: "Front-End Developer passionate about creating beautiful user experiences.",
+    aboutText1: "I turn ideas into responsive websites with clean HTML, modern CSS and JavaScript.",
+    aboutText2: "I continuously improve my skills by building projects and learning modern web technologies.",
+    myProjects: "My Projects",
+    statProjects: "Projects", statResponsive: "Responsive", statSemantic: "Semantic Code", statLayouts: "Modern Layouts",
+    skillHtml: "Semantic and accessible markup.", skillCss: "Responsive layouts, Grid, Flexbox and animations.", skillJs: "Interactive interfaces with vanilla JavaScript.", skillGit: "Version control and GitHub workflow.", responsiveDesign: "Responsive Design", skillResponsive: "Great experiences on every screen.", uiDesign: "UI Design", skillUi: "Minimal and user-focused interfaces.",
+    serviceLandingTitle: "Landing Pages", serviceLandingText: "Fast, polished and conversion-focused landing pages for products, services and campaigns.", serviceResponsiveTitle: "Responsive Websites", serviceResponsiveText: "Layouts that adapt smoothly to mobile, tablet and desktop screens without sacrificing usability.", serviceUiTitle: "UI Implementation", serviceUiText: "Turning visual designs into clean, accessible and maintainable HTML, CSS and JavaScript.",
+    processUnderstandTitle: "Understand", processUnderstandText: "I clarify the goal, audience and required features before writing code.", processPlanTitle: "Plan", processPlanText: "I structure the layout, content hierarchy and responsive behavior.", processBuildTitle: "Build", processBuildText: "I develop the interface with semantic HTML, modern CSS and JavaScript.", processTestTitle: "Test", processTestText: "I check mobile responsiveness, interactions, accessibility and performance.",
+    filterProjects: "Filter projects", filterAll: "All", project1Title: "Personal Portfolio", project1Text: "Modern responsive portfolio built with HTML, CSS and JavaScript.", project2Title: "Modern Landing Page", project2Text: "Premium landing page with smooth animation and responsive design.", project3Title: "Responsive Blog", project3Text: "Clean blog interface focused on readability and performance.", liveDemo: "Live Demo", projectDetails: "Project Details", project1Alt: "Personal portfolio preview", project2Alt: "Landing page preview", project3Alt: "Responsive blog preview",
     contactEyebrow: "CONTACT",
     contactTitle: "Let's Work Together",
     contactHeading: "Have a project in mind?",
@@ -241,6 +250,15 @@ const translations = {
     processTitle: "Geliştirme Sürecim",
     projectsEyebrow: "ÇALIŞMALARIM",
     projectsTitle: "Öne Çıkan Projeler",
+    aboutHeading: "Güzel kullanıcı deneyimleri oluşturmaya tutkuyla bağlı bir Front-End geliştiriciyim.",
+    aboutText1: "Fikirleri temiz HTML, modern CSS ve JavaScript ile responsive web sitelerine dönüştürüyorum.",
+    aboutText2: "Projeler geliştirerek ve modern web teknolojilerini öğrenerek becerilerimi sürekli geliştiriyorum.",
+    myProjects: "Projelerim",
+    statProjects: "Proje", statResponsive: "Responsive", statSemantic: "Semantik Kod", statLayouts: "Modern Düzenler",
+    skillHtml: "Semantik ve erişilebilir işaretleme.", skillCss: "Responsive düzenler, Grid, Flexbox ve animasyonlar.", skillJs: "Vanilla JavaScript ile etkileşimli arayüzler.", skillGit: "Sürüm kontrolü ve GitHub çalışma akışı.", responsiveDesign: "Responsive Tasarım", skillResponsive: "Her ekranda güçlü kullanıcı deneyimi.", uiDesign: "Arayüz Tasarımı", skillUi: "Sade ve kullanıcı odaklı arayüzler.",
+    serviceLandingTitle: "Açılış Sayfaları", serviceLandingText: "Ürünler, hizmetler ve kampanyalar için hızlı, şık ve dönüşüm odaklı açılış sayfaları.", serviceResponsiveTitle: "Responsive Web Siteleri", serviceResponsiveText: "Kullanılabilirlikten ödün vermeden mobil, tablet ve masaüstüne uyum sağlayan düzenler.", serviceUiTitle: "Arayüz Kodlama", serviceUiText: "Görsel tasarımları temiz, erişilebilir ve bakımı kolay HTML, CSS ve JavaScript koduna dönüştürme.",
+    processUnderstandTitle: "Anlama", processUnderstandText: "Kod yazmadan önce hedefi, kitleyi ve gerekli özellikleri netleştiririm.", processPlanTitle: "Planlama", processPlanText: "Sayfa düzenini, içerik hiyerarşisini ve responsive davranışı planlarım.", processBuildTitle: "Geliştirme", processBuildText: "Arayüzü semantik HTML, modern CSS ve JavaScript ile geliştiririm.", processTestTitle: "Test", processTestText: "Mobil uyumluluğu, etkileşimleri, erişilebilirliği ve performansı kontrol ederim.",
+    filterProjects: "Projeleri filtrele", filterAll: "Tümü", project1Title: "Kişisel Portföy", project1Text: "HTML, CSS ve JavaScript ile hazırlanmış modern ve responsive portföy sitesi.", project2Title: "Modern Açılış Sayfası", project2Text: "Akıcı animasyonlara ve responsive tasarıma sahip profesyonel açılış sayfası.", project3Title: "Responsive Blog", project3Text: "Okunabilirlik ve performans odaklı sade blog arayüzü.", liveDemo: "Canlı Demo", projectDetails: "Proje Detayları", project1Alt: "Kişisel portföy önizlemesi", project2Alt: "Açılış sayfası önizlemesi", project3Alt: "Responsive blog önizlemesi",
     contactEyebrow: "İLETİŞİM",
     contactTitle: "Birlikte Çalışalım",
     contactHeading: "Aklında bir proje mi var?",
@@ -271,6 +289,11 @@ function applyLanguage(language) {
   document.querySelectorAll("[data-i18n-aria]").forEach((element) => {
     const key = element.dataset.i18nAria;
     if (dictionary[key]) element.setAttribute("aria-label", dictionary[key]);
+  });
+
+  document.querySelectorAll("[data-i18n-alt]").forEach((element) => {
+    const key = element.dataset.i18nAlt;
+    if (dictionary[key]) element.setAttribute("alt", dictionary[key]);
   });
 
   if (languageLabel) {

@@ -66,3 +66,9 @@ Replace every `mail@example.com` occurrence before publishing.
 - Custom app icon and favicon
 
 GitHub Pages must be served over HTTPS for the service worker and install feature to work.
+
+
+## V6.3 Fixes
+- Full Turkish/English translation for all main sections
+- Equal project card sizes and valid project HTML structure
+- Updated PWA cache version

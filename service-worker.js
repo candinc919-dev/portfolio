@@ -1,11 +1,11 @@
-const CACHE_NAME = "can-portfolio-v6-2-fixed-1";
+const CACHE_NAME = "can-portfolio-v6-3-3-fixed-1";
 const OFFLINE_URL = "./offline.html";
 
 const CORE_ASSETS = [
   "./",
   "./index.html",
-  "./style.css",
-  "./script.js",
+  "./style.css?v=6.3",
+  "./script.js?v=6.3",
   "./manifest.webmanifest",
   "./offline.html",
   "./images/favicon.svg",
