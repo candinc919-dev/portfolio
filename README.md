@@ -87,3 +87,8 @@ Responsive Blog preview updated for the bilingual Turkish/English version.
 ## V6.6
 
 Modern Landing Page project card now links to the separate bilingual `modern-landing-page` GitHub Pages project.
+
+
+## V6.6.1
+
+Fixed Modern Landing Page Live Demo and GitHub links.

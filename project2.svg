@@ -1,24 +1,26 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="720" viewBox="0 0 1200 720">
-<defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#6f63ff"/><stop offset="1" stop-color="#4ed7f2"/></linearGradient></defs>
-<rect width="1200" height="720" fill="#0b1020"/>
-<circle cx="120" cy="150" r="260" fill="#6f63ff" opacity=".18"/><circle cx="1090" cy="590" r="300" fill="#4ed7f2" opacity=".12"/>
-<rect x="55" y="42" width="1090" height="636" rx="30" fill="#10172b" stroke="#fff" stroke-opacity=".12"/>
-<rect x="55" y="42" width="1090" height="76" rx="30" fill="#0d1427"/>
-<rect x="88" y="63" width="34" height="34" rx="10" fill="url(#g)"/>
-<text x="105" y="87" text-anchor="middle" fill="#fff" font-family="Arial" font-size="20" font-weight="800">N</text>
-<text x="136" y="87" fill="#fff" font-family="Arial" font-size="21" font-weight="700">NovaFlow</text>
-<text x="680" y="87" fill="#9da9c3" font-family="Arial" font-size="15">Özellikler   Nasıl Çalışır?   Sonuçlar   Fiyatlandırma</text>
-<rect x="1032" y="64" width="58" height="32" rx="10" fill="#6f63ff"/><text x="1061" y="85" text-anchor="middle" fill="#fff" font-family="Arial" font-size="13" font-weight="700">EN</text>
-<rect x="90" y="165" width="185" height="35" rx="18" fill="#181d3b" stroke="#6f63ff" stroke-opacity=".5"/>
-<circle cx="112" cy="182" r="6" fill="#55d6a0"/><text x="130" y="188" fill="#c7c3ff" font-family="Arial" font-size="13">Yeni nesil çalışma alanı</text>
-<text x="90" y="265" fill="#fff" font-family="Arial" font-size="56" font-weight="800">Ekibinizin en iyi işini</text>
-<text x="90" y="328" fill="#fff" font-family="Arial" font-size="56" font-weight="800">yapmasını kolaylaştırın.</text>
-<text x="90" y="380" fill="#aeb9d3" font-family="Arial" font-size="18">Görevleri, iletişimi ve ilerlemeyi tek bir sade alanda birleştirin.</text>
-<rect x="90" y="420" width="145" height="48" rx="13" fill="url(#g)"/><text x="162" y="451" text-anchor="middle" fill="#fff" font-family="Arial" font-size="16" font-weight="700">Şimdi Başla</text>
-<rect x="650" y="150" width="445" height="430" rx="24" fill="#141e37" stroke="#fff" stroke-opacity=".12"/>
-<rect x="650" y="150" width="445" height="52" rx="24" fill="#11192e"/>
-<rect x="680" y="218" width="390" height="72" rx="14" fill="#18233f"/>
-<rect x="680" y="310" width="116" height="90" rx="12" fill="#18233f"/><rect x="816" y="310" width="116" height="90" rx="12" fill="#18233f"/><rect x="952" y="310" width="116" height="90" rx="12" fill="#18233f"/>
-<rect x="680" y="430" width="116" height="115" rx="12" fill="#19253f"/><rect x="816" y="430" width="116" height="115" rx="12" fill="#19253f"/><rect x="952" y="430" width="116" height="115" rx="12" fill="#19253f"/>
-<rect x="695" y="450" width="54" height="18" rx="5" fill="#6f63ff" opacity=".45"/><rect x="831" y="450" width="54" height="18" rx="5" fill="#ffad67" opacity=".45"/><rect x="967" y="450" width="54" height="18" rx="5" fill="#55d6a0" opacity=".45"/>
+<rect width="1200" height="720" fill="#f7f5f0"/>
+<rect x="55" y="45" width="1090" height="630" rx="30" fill="#fff" stroke="#dedbd3" stroke-width="3"/>
+<rect x="55" y="45" width="1090" height="76" rx="30" fill="#f7f5f0"/>
+<circle cx="105" cy="83" r="18" fill="#315f4e"/><text x="105" y="91" text-anchor="middle" fill="#fff" font-family="Georgia" font-size="22">M</text>
+<text x="140" y="91" fill="#1d211f" font-family="Arial" font-weight="700" font-size="24">Minimal Notlar</text>
+<text x="720" y="90" fill="#6f756f" font-family="Arial" font-size="17">Ana Sayfa   Yazılar   Hakkında   Bülten</text><rect x="1035" y="67" width="58" height="32" rx="16" fill="#315f4e"/><text x="1064" y="89" text-anchor="middle" fill="#fff" font-family="Arial" font-weight="700" font-size="13">EN</text>
+<text x="105" y="205" fill="#315f4e" font-family="Arial" font-weight="700" font-size="15" letter-spacing="3">TASARIM · GELİŞTİRME · ÜRETKENLİK</text>
+<text x="105" y="280" fill="#1d211f" font-family="Georgia" font-weight="700" font-size="58">Daha sade düşün,</text>
+<text x="105" y="345" fill="#1d211f" font-family="Georgia" font-weight="700" font-size="58">daha iyi üret.</text>
+<text x="105" y="400" fill="#6f756f" font-family="Arial" font-size="20">Web geliştirme ve yaratıcı çalışma süreçleri üzerine sade notlar.</text>
+<rect x="720" y="165" width="355" height="300" rx="24" fill="#dfe8df"/>
+<circle cx="985" cy="225" r="48" fill="#efd399"/>
+<rect x="775" y="325" width="300" height="80" fill="#a67c5b"/>
+<rect x="790" y="255" width="160" height="110" rx="7" fill="#fffdf7" transform="rotate(-5 870 310)"/>
+<circle cx="990" cy="330" r="39" fill="#493225" stroke="#fff" stroke-width="12"/>
+<rect x="105" y="505" width="300" height="120" rx="18" fill="#efede7"/>
+<rect x="430" y="505" width="300" height="120" rx="18" fill="#efede7"/>
+<rect x="755" y="505" width="300" height="120" rx="18" fill="#efede7"/>
+<text x="130" y="550" fill="#315f4e" font-family="Arial" font-weight="700" font-size="14">GELİŞTİRME</text>
+<text x="130" y="585" fill="#1d211f" font-family="Georgia" font-weight="700" font-size="22">Temiz HTML yazmak</text>
+<text x="455" y="550" fill="#315f4e" font-family="Arial" font-weight="700" font-size="14">TASARIM</text>
+<text x="455" y="585" fill="#1d211f" font-family="Georgia" font-weight="700" font-size="22">Boşluk kullanımı</text>
+<text x="780" y="550" fill="#315f4e" font-family="Arial" font-weight="700" font-size="14">ÜRETKENLİK</text>
+<text x="780" y="585" fill="#1d211f" font-family="Georgia" font-weight="700" font-size="22">Tek görev yaklaşımı</text>
 </svg>
