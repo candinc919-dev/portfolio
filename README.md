@@ -72,3 +72,13 @@ GitHub Pages must be served over HTTPS for the service worker and install featur
 - Full Turkish/English translation for all main sections
 - Equal project card sizes and valid project HTML structure
 - Updated PWA cache version
+
+
+## V6.4
+
+Responsive Blog project card now links to the separate `responsive-blog` GitHub Pages project.
+
+
+## V6.5
+
+Responsive Blog preview updated for the bilingual Turkish/English version.

@@ -1,4 +1,4 @@
-const CACHE_NAME = "can-portfolio-v6-3-3-fixed-1";
+const CACHE_NAME = "can-portfolio-v6-5-bilingual-blog";
 const OFFLINE_URL = "./offline.html";
 
 const CORE_ASSETS = [
