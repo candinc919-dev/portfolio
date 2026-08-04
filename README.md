@@ -82,3 +82,8 @@ Responsive Blog project card now links to the separate `responsive-blog` GitHub 
 ## V6.5
 
 Responsive Blog preview updated for the bilingual Turkish/English version.
+
+
+## V6.6
+
+Modern Landing Page project card now links to the separate bilingual `modern-landing-page` GitHub Pages project.
