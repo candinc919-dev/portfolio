@@ -92,3 +92,11 @@ Modern Landing Page project card now links to the separate bilingual `modern-lan
 ## V6.6.1
 
 Fixed Modern Landing Page Live Demo and GitHub links.
+
+
+## V7 Personal Photo Update
+
+- User-provided profile photo added to the hero section.
+- User-provided profile photo added to the About section.
+- Responsive image cropping and light-theme support included.
+- PWA cache updated to V7.

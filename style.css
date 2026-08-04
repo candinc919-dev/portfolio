@@ -608,3 +608,163 @@ body.modal-open { overflow:hidden; }
 .project-details-btn { margin-top:14px; }
 @media (max-width:950px){ .projects-grid{grid-template-columns:repeat(2,minmax(0,1fr)) !important;} }
 @media (max-width:600px){ .projects-grid{grid-template-columns:1fr !important;} .project-card>img{height:210px !important;flex-basis:210px;} }
+
+
+/* ==================================================
+   PORTFOLIO V7 — PERSONAL PROFILE PHOTO
+================================================== */
+
+.profile-hero-card {
+  position: relative;
+  width: min(440px, 100%);
+  margin-inline: auto;
+  padding: 18px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: 30px;
+  background: rgba(15, 23, 42, 0.64);
+  backdrop-filter: blur(22px);
+  box-shadow: var(--shadow);
+  animation: cardFloat 5s ease-in-out infinite;
+}
+
+.profile-hero-card::before {
+  content: "";
+  position: absolute;
+  top: -80px;
+  right: -70px;
+  width: 230px;
+  height: 230px;
+  border-radius: 50%;
+  background: rgba(79, 140, 255, 0.2);
+  filter: blur(55px);
+  pointer-events: none;
+}
+
+.profile-image-wrap {
+  position: relative;
+  z-index: 1;
+  height: 390px;
+  overflow: hidden;
+  border-radius: 22px;
+  background: linear-gradient(135deg, rgba(79, 140, 255, 0.2), rgba(103, 232, 249, 0.1));
+}
+
+.profile-hero-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 28%;
+  transition: transform 0.6s ease;
+}
+
+.profile-hero-card:hover .profile-hero-image {
+  transform: scale(1.035);
+}
+
+.profile-card-info {
+  position: relative;
+  z-index: 2;
+  padding: 22px 8px 5px;
+}
+
+.profile-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 12px;
+  color: #bdebd5;
+  font-size: 0.76rem;
+  font-weight: 700;
+}
+
+.profile-status i {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #4ade80;
+  box-shadow: 0 0 15px rgba(74, 222, 128, 0.8);
+}
+
+.profile-card-info h3 {
+  font-size: 1.45rem;
+  line-height: 1.25;
+}
+
+.profile-card-info > p {
+  margin-top: 4px;
+  color: #aab7d1;
+}
+
+.profile-tech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 17px;
+}
+
+.profile-tech span {
+  padding: 7px 11px;
+  border: 1px solid rgba(103, 232, 249, 0.18);
+  border-radius: 999px;
+  color: #c7d2fe;
+  background: rgba(79, 140, 255, 0.08);
+  font-size: 0.72rem;
+  font-weight: 700;
+}
+
+.profile-about-card .profile-avatar {
+  width: 174px;
+  height: 174px;
+  padding: 5px;
+  overflow: hidden;
+  border-radius: 42px;
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  transform: rotate(-4deg);
+}
+
+.profile-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 26%;
+  border-radius: 37px;
+}
+
+.profile-about-card:hover .profile-avatar {
+  transform: rotate(0deg) scale(1.04);
+}
+
+.light-theme .profile-hero-card {
+  background: rgba(255, 255, 255, 0.82);
+}
+
+.light-theme .profile-card-info > p {
+  color: #64748b;
+}
+
+.light-theme .profile-tech span {
+  color: #334155;
+}
+
+@media (max-width: 850px) {
+  .profile-hero-card {
+    max-width: 430px;
+  }
+}
+
+@media (max-width: 620px) {
+  .profile-image-wrap {
+    height: 330px;
+  }
+
+  .profile-about-card .profile-avatar {
+    width: 145px;
+    height: 145px;
+    border-radius: 34px;
+  }
+
+  .profile-avatar img {
+    border-radius: 29px;
+  }
+}
