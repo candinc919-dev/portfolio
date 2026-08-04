@@ -1,4 +1,4 @@
-const CACHE_NAME = "can-portfolio-v7-profile";
+const CACHE_NAME = "can-portfolio-v7-1-self-contained";
 const OFFLINE_URL = "./offline.html";
 
 const CORE_ASSETS = [
@@ -10,10 +10,6 @@ const CORE_ASSETS = [
   "./offline.html",
   "./images/favicon.svg",
   "./images/app-icon.svg",
-  "./images/project1.svg",
-  "./images/project2.svg",
-  "./images/project3.svg",
-  "./images/profile-can.webp"
 ];
 
 self.addEventListener("install", (event) => {

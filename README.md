@@ -100,3 +100,8 @@ Fixed Modern Landing Page Live Demo and GitHub links.
 - User-provided profile photo added to the About section.
 - Responsive image cropping and light-theme support included.
 - PWA cache updated to V7.
+
+
+## V7.1 Self-contained image fix
+
+Profile photo and all three project covers are embedded directly into `index.html` as data URLs. They no longer depend on the `images` folder being uploaded correctly.
